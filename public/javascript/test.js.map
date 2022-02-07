@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/javascript/test.js"],"names":["newOne","console","log"],"mappings":";;;;;;AAAA,IAAMA,MAAM,GAAG,wDAAC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,iBACRC,OAAO,CAACC,GAAR,CAAY,KAAZ,CADQ;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,CAAD,IAAf","sourcesContent":["const newOne = (async () => {\n  await console.log('uno');\n})();\n"],"file":"test.js"}

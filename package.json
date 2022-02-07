@@ -6,7 +6,9 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=membersonly:* npm run devstart",
-    "git": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'commited: ' $(tput setaf 1)$(date) && echo '\n'"
+    "git": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'commited: ' $(tput setaf 1)$(date) && echo '\n'",
+    "sass": "sass --watch src/stylesheets:public/stylesheets",
+    "babel": "npx babel src --watch --out-dir public --source-maps"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
