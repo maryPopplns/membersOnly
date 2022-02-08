@@ -105,3 +105,45 @@ main.signupForm {
     cursor: pointer;
   }
 }
+
+main.loginForm {
+  display: flex;
+  justify-content: center;
+  div.formContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 19rem;
+    background-color: $darkyellow;
+    border-radius: 0.5rem;
+  }
+  div.formContainer form h2 {
+    margin: 1rem 0;
+    font-size: 2rem;
+    font-family: sans-serif;
+  }
+  div.formContainer form div.loginInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+    label {
+      font-family: sans-serif;
+      font-weight: 700;
+    }
+    input {
+      height: 1.5rem;
+    }
+  }
+  div.formContainer form button {
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border: none;
+    background-color: darken($darkyellow, 10%);
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+}

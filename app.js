@@ -8,6 +8,7 @@ const logger = require('morgan');
 
 const homeRouter = require(path.join(__dirname, 'routes/homepage'));
 const signupRouter = require(path.join(__dirname, 'routes/signup'));
+const loginRouter = require(path.join(__dirname, 'routes/login'));
 
 mongoose.connect(process.env.MONGO_STRING_LOCAL, {
   useUnifiedTopology: true,
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/signup', signupRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

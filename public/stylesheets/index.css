@@ -92,4 +92,46 @@ main.signupForm div.formContainer form button {
   cursor: pointer;
 }
 
+main.loginForm {
+  display: flex;
+  justify-content: center;
+}
+main.loginForm div.formContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 19rem;
+  background-color: #d4fd02;
+  border-radius: 0.5rem;
+}
+main.loginForm div.formContainer form h2 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+main.loginForm div.formContainer form div.loginInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+main.loginForm div.formContainer form div.loginInput label {
+  font-family: sans-serif;
+  font-weight: 700;
+}
+main.loginForm div.formContainer form div.loginInput input {
+  height: 1.5rem;
+}
+main.loginForm div.formContainer form button {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: none;
+  background-color: #aaca02;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=index.css.map */
