@@ -4,10 +4,12 @@ const { check } = require('express-validator');
 const User = require(path.join(__dirname, '../models/user'));
 const debug = require('debug')('membersonly:signupController');
 
+// [ SIGNUP GET ROUTE ]
 exports.signup_get = function (req, res) {
   res.render('signup');
 };
 
+// [ SIGNUP POST ROUTE ]
 exports.signup_post = [
   check('fullname').trim().escape(),
   check('username').trim().escape(),
