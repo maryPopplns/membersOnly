@@ -133,5 +133,10 @@ main.loginForm div.formContainer form button {
   border-radius: 0.25rem;
   cursor: pointer;
 }
+main.loginForm div.formContainer form p.error {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  color: #ff8288;
+}
 
 /*# sourceMappingURL=index.css.map */

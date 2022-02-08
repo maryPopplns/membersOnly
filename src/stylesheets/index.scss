@@ -4,6 +4,7 @@ $darkgreen: #35df79;
 $lightgreen: #7ace9c;
 $darkyellow: #d4fd02;
 $lightyellow: #eaff82;
+$red: #ff8288;
 
 :root {
   font-size: 16px;
@@ -145,5 +146,10 @@ main.loginForm {
     background-color: darken($darkyellow, 10%);
     border-radius: 0.25rem;
     cursor: pointer;
+  }
+  div.formContainer form p.error {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: $red;
   }
 }

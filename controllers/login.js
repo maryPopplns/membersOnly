@@ -28,7 +28,8 @@ passport.use(
     });
   })
 );
-// [ SERIALIZATION ]
+
+// [ SERIALIZE / DESERIALIZE ]
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
@@ -47,9 +48,20 @@ exports.login_get = function (req, res) {
 exports.login_post = [
   check('username').trim().escape(),
   check('password').trim().escape(),
-  passport.authenticate('local', {
-    successReturnToOrRedirect: '/',
-    failureRedirect: '/login',
-    failureMessage: true,
-  }),
+  function (req, res, next) {
+    passport.authenticate('local', function (error, user, info) {
+      if (error) {
+        return next(error);
+      } else if (!user) {
+        return res.render('login', { message: info.message });
+      } else {
+        return res.redirect('/');
+      }
+    })(req, res, next);
+  },
+  // passport.authenticate('local', {
+  //   successReturnToOrRedirect: '/',
+  //   failureRedirect: '/login',
+  //   failureMessage: true,
+  // }),
 ];
