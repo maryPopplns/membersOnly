@@ -1,11 +1,20 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const homeRouter = require(path.join(__dirname, 'routes/homepage'));
 const signupRouter = require(path.join(__dirname, 'routes/signup'));
+
+mongoose.connect(process.env.MONGO_STRING_LOCAL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
+const database = mongoose.connection;
+database.on('error', console.error.bind(console, 'mongo connection error'));
 
 const app = express();
 
