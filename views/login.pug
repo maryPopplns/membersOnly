@@ -6,13 +6,11 @@ block content
       form(action='' method='POST')
         h2 Login Form
         div.loginInput
-          label(for='fullname') Fullname:
-          input(type='text' id='fullname' name='fullname' placeholder='fullname' required)
-        div.loginInput
           label(for='username') Username:
           input(type='text' id='username' name='username' placeholder='username' required)
         div.loginInput
           label(for='password') Password:
           input(type='text' id='password' name='password' placeholder='password' required)
         button(type='submit') Submit
+
   script(src='javascript/login.js')

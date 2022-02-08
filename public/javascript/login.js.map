@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":[],"file":"login.js"}
+{"version":3,"sources":["../../src/javascript/login.js"],"names":["document","getElementById","focus"],"mappings":";;AAAAA,QAAQ,CAACC,cAAT,CAAwB,UAAxB,EAAoCC,KAApC","sourcesContent":["document.getElementById('username').focus();\n"],"file":"login.js"}
