@@ -1,0 +1,19 @@
+$black: #000;
+$darkblue: #01b7ee;
+$lightblue: #57bedd;
+$darkgreen: #35df79;
+$lightgreen: #7ace9c;
+$darkyellow: #d4fd02;
+$lightyellow: #eaff82;
+
+body {
+  background-color: $black;
+}
+
+main.homepageContent {
+  header.navHeader {
+    height: 3rem;
+    background-color: $lightblue;
+    // background-color: $darkblue;
+  }
+}

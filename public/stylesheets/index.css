@@ -1,3 +1,10 @@
+body {
+  background-color: #000;
+}
 
+main.homepageContent header.navHeader {
+  height: 3rem;
+  background-color: #57bedd;
+}
 
 /*# sourceMappingURL=index.css.map */
