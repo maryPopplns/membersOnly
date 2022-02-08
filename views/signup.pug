@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  main.signupForm
+    div.formContainer
+      form(action='' method='POST')
+        h2 Signup Form
+        div.signupInput
+          label(for='fullname') Fullname:
+          input(type='text' id='fullname' name='fullname' placeholder='fullname' required)
+        div.signupInput
+          label(for='username') Username:
+          input(type='text' id='username' name='username' placeholder='username' required)
+        div.signupInput
+          label(for='password') Password:
+          input(type='text' id='password' name='password' placeholder='password' required)
+        button(type='submit') Submit
+  script(src='javascript/signup.js')

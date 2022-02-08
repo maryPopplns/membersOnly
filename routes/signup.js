@@ -3,11 +3,9 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  // create user model
-  // create form to be submitted
   // install mongoose
   // connect to mongo
-  res.send('signup');
+  res.render('signup');
 });
 
 module.exports = router;

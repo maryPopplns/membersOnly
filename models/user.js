@@ -12,7 +12,7 @@ const userSchema = new Schema({
     maxLength: 20,
     enum: ['member', 'club-member'],
   },
-  admin: Boolean,
+  admin: { type: Boolean, required: true },
 });
 
 module.exports = mongoose.model('User', userSchema);

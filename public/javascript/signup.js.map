@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/javascript/signup.js"],"names":["document","getElementById","focus"],"mappings":";;AAAAA,QAAQ,CAACC,cAAT,CAAwB,UAAxB,EAAoCC,KAApC","sourcesContent":["document.getElementById('fullname').focus();\n"],"file":"signup.js"}
