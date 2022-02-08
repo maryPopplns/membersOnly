@@ -8,9 +8,9 @@
     "serverstart": "DEBUG=membersonly:* npm run devstart",
     "dbstop": "brew services stop mongodb-community@5.0",
     "dbstart": "brew services start mongodb-community@5.0",
-    "git": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'commited: ' $(tput setaf 1)$(date) && echo '\n'",
     "sass": "sass --watch src/stylesheets:public/stylesheets",
-    "babel": "npx babel src --watch --out-dir public --source-maps"
+    "babel": "npx babel src --watch --out-dir public --source-maps",
+    "git": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'commited: ' $(tput setaf 1)$(date) && echo '\n'"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
