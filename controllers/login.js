@@ -29,9 +29,12 @@ passport.use(
 
 // [ SERIALIZE/DESERIALIZE USER ]
 passport.serializeUser(function (user, done) {
+  console.log('serialize');
   done(null, user.id);
 });
+
 passport.deserializeUser(function (id, done) {
+  console.log('deserialize');
   User.findById(id, function (err, user) {
     done(err, user);
   });
@@ -53,7 +56,13 @@ exports.login_post = [
       } else if (!user) {
         return res.render('login', { message: info.message });
       } else {
-        return res.redirect('/');
+        req.logIn(user, function (err) {
+          if (error) {
+            return next(err);
+          } else {
+            return res.redirect('/');
+          }
+        });
       }
     })(req, res, next);
   },

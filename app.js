@@ -15,7 +15,6 @@ const logoutRouter = require(path.join(__dirname, 'routes/logout'));
 const homeRouter = require(path.join(__dirname, 'routes/homepage'));
 const signupRouter = require(path.join(__dirname, 'routes/signup'));
 
-// [ EXPRESS APP ]
 const app = express();
 
 // [ MONGO CONNECTION ]
@@ -30,6 +29,18 @@ database.on('error', console.error.bind(console, 'mongo connection error'));
 const sessionStore = MongoStore.create({
   mongoUrl: process.env.MONGO_STRING_LOCAL,
 });
+
+// [ VIEW ENGINE ]
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// [ SESSION ]
 app.use(
   session({
     secret: process.env.SECRET,
@@ -46,16 +57,6 @@ app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
   next();
 });
-
-// [ VIEW ENGINE ]
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // [ ROUTES ]
 app.use('/', homeRouter);
