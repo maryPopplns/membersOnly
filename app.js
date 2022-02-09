@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const debug = require('debug')('membersonly:app');
 
 const loginRouter = require(path.join(__dirname, 'routes/login'));
+const logoutRouter = require(path.join(__dirname, 'routes/logout'));
 const homeRouter = require(path.join(__dirname, 'routes/homepage'));
 const signupRouter = require(path.join(__dirname, 'routes/signup'));
 
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
