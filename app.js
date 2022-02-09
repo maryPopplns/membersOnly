@@ -2,11 +2,13 @@ require('dotenv').config();
 const path = require('path');
 const logger = require('morgan');
 const express = require('express');
+const passport = require('passport');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const createError = require('http-errors');
 const MongoStore = require('connect-mongo');
 const cookieParser = require('cookie-parser');
+const debug = require('debug')('membersonly:app');
 
 const loginRouter = require(path.join(__dirname, 'routes/login'));
 const homeRouter = require(path.join(__dirname, 'routes/homepage'));
@@ -35,6 +37,14 @@ app.use(
     store: sessionStore,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
+
+// [ SET USER ]
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 // [ VIEW ENGINE ]
 app.set('views', path.join(__dirname, 'views'));

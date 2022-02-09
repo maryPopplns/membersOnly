@@ -32,7 +32,7 @@ exports.signup_post = [
             membership: 'member',
             admin: false,
           },
-          function (error) {
+          function (error, user) {
             if (error) {
               return next(error);
             }

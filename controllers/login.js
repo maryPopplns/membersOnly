@@ -18,10 +18,8 @@ passport.use(
       }
       bcrypt.compare(password, user.password, (err, res) => {
         if (res) {
-          // passwords match! log user in
           return done(null, user);
         } else {
-          // passwords do not match!
           return done(null, false, { message: 'Incorrect password' });
         }
       });
@@ -29,7 +27,7 @@ passport.use(
   })
 );
 
-// [ SERIALIZE / DESERIALIZE ]
+// [ SERIALIZE/DESERIALIZE USER ]
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
@@ -59,9 +57,4 @@ exports.login_post = [
       }
     })(req, res, next);
   },
-  // passport.authenticate('local', {
-  //   successReturnToOrRedirect: '/',
-  //   failureRedirect: '/login',
-  //   failureMessage: true,
-  // }),
 ];
