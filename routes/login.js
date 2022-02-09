@@ -6,7 +6,6 @@ const { login_get, login_post } = require(path.join(
   '../controllers/login'
 ));
 
-/* GET users listing. */
 router.get('/', login_get);
 router.post('/', login_post);
 

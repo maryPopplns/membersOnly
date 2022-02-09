@@ -9,6 +9,15 @@ block content
         else
           a.login(href='/login') Login
         a.signup(href='/signup') Sign Up
-    if currentUser
-      div=currentUser
     main.homepageContent
+      form.newMessage(method='POST' action='')
+        h2 Create Message
+        div.messageInput
+          label(for='title') Title:
+          input(type='text' id='title' name='title' required='true' placeholder=(currentUser ? 'Title' : 'Login to post') readonly=(currentUser ? false : true))
+        div.messageInput
+          label(for='message') Message:
+          input(type='text' id='message' name='message' required='true' placeholder=(currentUser ? 'Message' : 'Login to post') readonly=(currentUser ? false : true))
+        if currentUser
+          button(type='submit') Submit
+      div.allMessages

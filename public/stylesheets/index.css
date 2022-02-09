@@ -50,6 +50,34 @@ main.homepage header div.signupLoginContainer a:hover {
 main.homepage header div.signupLoginContainer a:hover:before {
   width: 100%;
 }
+main.homepage main.homepageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main.homepage main.homepageContent form.newMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 19rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: #eaff82;
+  border-radius: 0.5rem;
+}
+main.homepage main.homepageContent form.newMessage h2 {
+  margin-bottom: 1rem;
+}
+main.homepage main.homepageContent form.newMessage div.messageInput {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.25rem 0;
+}
+main.homepage main.homepageContent form.newMessage button {
+  margin-top: 1rem;
+}
+
 main.signupForm {
   display: flex;
   justify-content: center;

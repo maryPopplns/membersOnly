@@ -41,18 +41,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // [ SESSION ]
+const oneDay = 1000 * 60 * 60 * 24;
 app.use(
   session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     store: sessionStore,
+    cookie: { maxAge: oneDay },
   })
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
-// [ SET USER ]
+// [ SET USER TO LOCAL ]
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
   next();
