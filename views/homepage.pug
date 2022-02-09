@@ -4,7 +4,10 @@ block content
   main.homepage
     header
       div.signupLoginContainer
-        a.login(href='/login') Login
+        if currentUser
+          a.logout(href='/logout') Logout
+        else
+          a.login(href='/login') Login
         a.signup(href='/signup') Sign Up
     main.homepageContent
     if currentUser
