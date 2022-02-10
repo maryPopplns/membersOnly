@@ -21,3 +21,6 @@ block content
         if currentUser
           button(type='submit') Submit
       div.allMessages
+        if messages
+          each message in messages
+            div=message.title
